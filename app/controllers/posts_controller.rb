@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   include CableReady::Broadcaster
 
@@ -12,7 +14,7 @@ class PostsController < ApplicationController
     cable_ready['timeline'].insert_adjacent_html(
       selector: '#timeline',
       position: 'afterbegin',
-      html: render_to_string(partial: 'post', locals: { post: post })
+      html:     render_to_string(partial: 'post', locals: { post: post })
     )
     cable_ready.broadcast
 
