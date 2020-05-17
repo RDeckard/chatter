@@ -12,6 +12,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="sticky-top d-flex flex-row-reverse">
+        <%= link_to 'admin', admin_root_path, class: 'btn btn-info'%>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
