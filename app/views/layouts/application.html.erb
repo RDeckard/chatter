@@ -16,6 +16,9 @@
       <div class="sticky-top d-flex flex-row-reverse">
         <%= link_to 'admin', admin_root_path, class: 'btn btn-info'%>
       </div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
       <%= yield %>
     </div>
   </body>
