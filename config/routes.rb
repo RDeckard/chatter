@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index create]
 
   namespace :admin do
+    resources :users
     resources :posts
 
     root controller: :posts, action: :index

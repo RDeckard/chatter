@@ -19,7 +19,7 @@ class PostsTest < ApplicationSystemTestCase
     fill_in 'Body', with: @post.body
     fill_in 'Likes count', with: @post.likes_count
     fill_in 'Reposts count', with: @post.reposts_count
-    fill_in 'Username', with: @post.username
+    fill_in 'User ID', with: @post.user_id
     click_on 'Create Post'
 
     assert_text 'Post was successfully created'
@@ -33,7 +33,7 @@ class PostsTest < ApplicationSystemTestCase
     fill_in 'Body', with: @post.body
     fill_in 'Likes count', with: @post.likes_count
     fill_in 'Reposts count', with: @post.reposts_count
-    fill_in 'Username', with: @post.username
+    fill_in 'User ID', with: @post.user_id
     click_on 'Update Post'
 
     assert_text 'Post was successfully updated'

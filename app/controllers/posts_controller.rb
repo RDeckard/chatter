@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create(post_params)
+    post = current_user.posts.create(post_params)
 
     cable_ready['timeline'].insert_adjacent_html(
       selector: '#timeline',

@@ -5,4 +5,6 @@ class User < ApplicationRecord
   # :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :validatable, :trackable
+
+  has_many :posts, dependent: :restrict_with_error
 end
