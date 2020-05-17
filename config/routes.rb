@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   root controller: :posts, action: :index
 
+  devise_for :users
   resources :posts, only: %i[index create]
 
   namespace :admin do
