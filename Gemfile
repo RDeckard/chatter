@@ -64,3 +64,5 @@ gem 'redis', '~> 4.1'
 gem 'stimulus_reflex', '~> 3.2'
 
 gem 'pry-rails', '~> 0.3.9'
+
+gem 'administrate', '~> 0.13.0'
