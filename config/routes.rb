@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
     root controller: :posts, action: :index
   end
+
+  get :game, controller: :application, action: :game
 end
