@@ -1,5 +1,7 @@
 import Phaser from "phaser"
 
+import TimelineChannel from '../../channels/timeline_channel'
+
 import Player      from '../objects/player'
 import BombSpawner from '../objects/bomb_spawner'
 import ScoreLabel  from '../ui/score_label'
@@ -104,6 +106,8 @@ export default class GameScene extends Phaser.Scene {
     this.bombSpawner.spawn(
       (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400)
     )
+
+    TimelineChannel.send({message: "Yeah!"})
   }
 
   hitBomb(player, bomb) {
@@ -112,6 +116,8 @@ export default class GameScene extends Phaser.Scene {
     player.anims.play('turn')
 
     this.gameOver = true
+
+    TimelineChannel.perform('game_over', {message: "Ouch!"})
   }
 
   createPlatforms() {
