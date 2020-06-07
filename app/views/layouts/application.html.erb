@@ -8,12 +8,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :extra_head %>
   </head>
 
   <body>
     <div class="container">
       <div class="sticky-top d-flex flex-row-reverse">
-        <%= link_to 'admin', admin_root_path, class: 'btn btn-info'%>
+        <%= link_to 'admin', admin_root_path, class: 'btn btn-info' %>
+        <%= link_to 'game', game_path, class: 'btn btn-info' %>
       </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
